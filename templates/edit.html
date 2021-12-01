@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<section class="content">
+  <section class="tweet_clone">
+    <div class="page_title">
+      <img src="{% static 'img/globe_icon.png' %}" />
+      <div class="page_title_name">EDIT</div>
+    </div>
+  </section>
+  <section class="tweet_form">
+    <form
+      action="/edit/{{tweet.id}}/"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %}
+      <input
+        type="text"
+        class="text"
+        name="name"
+        value="{{tweet.name}}"
+        placeholder="Enter your name"
+        required
+      />
+      <textarea name="body" placeholder="What's happening?" required>
+{{tweet.body}}</textarea
+      >
+
+      <label for="{{tweet.name}}"></label>
+      <input type="file" class="chose_img" name="image" /> <br />
+      <br />
+      {% if tweet.image.url %}
+      <img class="edit-img" src="{{tweet.image.url}}" />
+
+      <br />
+      <br />
+      {% endif %}
+      <div class="edit_button">
+        <a href="/"
+          ><input type="button" class="cancel_button" value="Cancel"
+        /></a>
+        <input class="update_button" type="submit" value="Update" />
+      </div>
+    </form>
+  </section>
+</section>
+{% endblock %}

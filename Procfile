@@ -1,0 +1,1 @@
+web: gunicon twitter_clone.wsgi

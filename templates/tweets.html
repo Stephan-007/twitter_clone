@@ -1,0 +1,90 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<section class="content">
+  <section class="tweet_clone">
+    <div class="page_title">
+      <img src="{% static 'img/twitter_logo.png' %}" />
+      <div class="page_title_name">Home</div>
+    </div>
+  </section>
+  <section class="tweet_form">
+    <form action="/" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input
+        type="text"
+        class="text"
+        name="name"
+        placeholder="Enter your name"
+        required
+      />
+      <textarea name="body" placeholder="What's happening?" required></textarea>
+      <div class="tweet_form_foot">
+        <input type="file" name="image" class="f_upload" />
+        {% csrf_token %}
+        <input type="submit" class="submit" value="Tweet" />
+      </div>
+    </form>
+  </section>
+  <section class="tweet">
+    {% if tweet.count == 0 %}
+    <p>There is no tweet now.</p>
+    {% else %}
+    <ul>
+      {% for tweet in tweets %}
+      <li>
+        <img
+          class="menu_icon js-menu-icon"
+          src="{% static 'img/option.png' %}"
+        />
+        <div class="menu">
+          <div><a href="/edit/{{tweet.id}}">Edit</a></div>
+          <div><a href="/delete/{{tweet.id}}">Delete</a></div>
+        </div>
+        <div class="tweet_img">
+          <img src="{% static 'img/profile_image.png' %}" />
+        </div>
+        <div class="tweet_box">
+          <div class="tweet_box_content">
+            <div class="tweet_box_name">{{tweet.name}}</div>
+            <div class="tweet_box_date">{{tweet.date}}</div>
+          </div>
+          <p class="tweet_box_body">{{tweet.body}}</p>
+          {% if tweet.image %}
+          <div><img class="tweet_box_pic" src="{{tweet.image.url}}" /></div>
+
+          <br />
+          <br />
+          {% endif %}
+
+          <div class="icon_list">
+            <form
+              id="likes-form"
+              action="{% url 'like_tweet' tweet.pk %}"
+              method="POST"
+            >
+              {% csrf_token %}
+              <button
+                class="like-button"
+                type="submit"
+                ,
+                name="tweet_id"
+                ,
+                value="{{ tweet.id }}"
+              >
+                &#10084;
+              </button>
+              {{tweet.likes}}
+            </form>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/posts.js' %}"></script>
+</section>
+{% endif %} {% endblock %}
