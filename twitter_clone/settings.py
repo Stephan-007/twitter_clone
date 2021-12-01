@@ -78,13 +78,25 @@ WSGI_APPLICATION = 'twitter_clone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd1ela4jeo7o1nk',
+        'USER': 'opyokgmnbkoaxt',
+        'HOST': 'ec2-34-193-235-32.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'PASSWORD': 'f7ec9892abe5385b365c2b8dabbdd5f83712b463a292a12efde86b589dc493aa',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
