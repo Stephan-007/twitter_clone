@@ -87,7 +87,7 @@ a {
 }
 .edit-img {
   width: 500px;
-  margin-left: 5%;
+  margin-left: 0%;
   margin-top: 10%;
 }
 
@@ -102,16 +102,16 @@ a {
 }
 
 .cancel_button {
-  font-size: 35px;
-  padding: 5%;
+  font-size: 30px;
+  padding: 2%;
   background-color: #1474c4;
   border-radius: 10px;
   color: white;
 }
 
 .update_button {
-  font-size: 35px;
-  padding: 5%;
+  font-size: 30px;
+  padding: 2%;
   background-color: #1474c4;
   border-radius: 10px;
   color: white;
