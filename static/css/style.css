@@ -91,7 +91,7 @@ a {
 }
 
 .edit_button {
-  margin-left: 55%;
+  margin-left: 50%;
 }
 
 .chose_img {
@@ -110,7 +110,7 @@ a {
 }
 
 .cancel_button {
-  font-size: 25px;
+  font-size: 20px;
   padding: 2%;
   background-color: #1474c4;
   border-radius: 10px;
@@ -118,7 +118,7 @@ a {
 }
 
 .update_button {
-  font-size: 25px;
+  font-size: 20px;
   padding: 2%;
   background-color: #1474c4;
   border-radius: 10px;
