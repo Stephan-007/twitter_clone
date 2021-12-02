@@ -95,9 +95,9 @@ a {
 }
 
 .chose_img {
-  margin-left: 0%;
+  margin-left: -53%;
   position: absolute;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .cancel_button {
@@ -164,6 +164,7 @@ a {
   color: white;
   border-radius: 7px;
   border: 0px;
+  margin-left: 61%;
 }
 
 .tweet li .menu_icon {
@@ -365,6 +366,11 @@ Post
   margin-right: auto;
   width: 50%;
   float: left;
+}
+.chose_img-edit {
+  margin-left: 0%;
+  position: absolute;
+  font-size: 25px;
 }
 
 .posts li .menu_icon {
