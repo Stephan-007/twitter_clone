@@ -95,9 +95,18 @@ a {
 }
 
 .chose_img {
-  margin-left: -53%;
+  margin-left: 0%;
   position: absolute;
   font-size: 20px;
+}
+.submit {
+  margin-left: 80%;
+  font-size: 20px;
+  background-color: #1474c4;
+  border: 0;
+  border-radius: 5px;
+  padding: 1% 4%;
+  color: white;
 }
 
 .cancel_button {
